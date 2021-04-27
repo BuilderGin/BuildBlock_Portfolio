@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} | Welcome {% endblock %}
+
+{% block content %}
+
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="hero__slider owl-carousel">
+        <div class="hero__item set-bg" data-setbg="{% static 'img/hero/hero-7.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <span>Professionele Website bouwen</span>
+                            <h2>Zakelijke Uitstraling</h2>
+                            <a href="{% url 'servicespage' %}" class="primary-btn">Meer over websites</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__item set-bg" data-setbg="{% static 'img/hero/hero-5.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <span>Ecommerce website met adminpanel</span>
+                            <h2>Start met Online Verkoop</h2>
+                            <a href="{% url 'servicespage' %}" class="primary-btn">Meer over webshops</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__item set-bg" data-setbg="{% static 'img/hero/hero-6.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <span>Webhosting / domeinnaam regelen</span>
+                            <h2>Goede hosting is belangrijk</h2>
+                            <a href="{% url 'servicespage' %}" class="primary-btn">Meer over hosting & domeinen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+
+<!-- Services Section Begin -->
+    <section class="services spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="services__title">
+                        <div class="section-title">
+                            <span>Onze service</span>
+                            <h2>What Ik Doe?</h2>
+                        </div>
+                        <p> 
+                            Ik regelen uw domeinnaam, hosting en webite of webshop bouwen naar uw wensen. 
+                            De hele project houden we contact over de status, wijziging en update. 
+                            Zeker na onze samen werking houden we nog contact en helpen we u graag waar nodig</p>
+                        <p>
+                        <a href="{% url 'servicespage' %}" class="primary-btn">Zie alle services</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        {% if services %}
+                            {% for service in services %}
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="services__item">
+                                        <div class="services__item__icon">
+                                            <img src="{{ service.icon.url }}" alt="">
+                                        </div>
+                                        <h4>{{ service.title }}</h4>
+                                        <p>{{ service.description }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Counter Section Begin -->
+    <section class="counter">
+        <div class="container">
+            <div class="counter__content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item">
+                            <div class="counter__item__text">
+                                <img src="{% static 'img/icons/ci-1.png' %}" alt="">
+                                <h2 class="counter_num">{% if company.completed_projects %} {{ company.completed_projects }} {% endif %}</h2>
+                                <p>Compled Projects</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item second__item">
+                            <div class="counter__item__text">
+                                <img src="{% static 'img/icons/ci-2.png' %}" alt="">
+                                <h2 class="counter_num">{% if company.happy_clients %} {{ company.happy_clients }} {% endif %}</h2>
+                                <p>Happy clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item third__item">
+                            <div class="counter__item__text">
+                                <img src="{% static 'img/icons/ci-3.png' %}" alt="">
+                                <h2 class="counter_num">{% if company.perspectief_clients %} {{ company.perspectief_clients }} {% endif %}</h2>
+                                <p>Perspective clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item four__item">
+                            <div class="counter__item__text">
+                                <img src="{% static 'img/icons/ci-4.png' %}" alt="">
+                                <h2 class="counter_num">{% if company.completed_projects %} {{ company.completed_projects }} {% endif %}</h2>
+                                <p>Compled Projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Counter Section End -->
+
+    <!-- Call To Action Section Begin -->
+    <section class="callto spad set-bg" data-setbg="{% static 'img/callto-bg1.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="callto__text">
+                        <h2>Frisse ideeën, frisse momenten die vleugels geven aan uw verhalen.</h2>
+                        <p>
+                            Ben je klaar om online te starten? Alles is mogelijk met ons. Maak van 
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            jou jaar.
+                        </p>
+                        <a href="{% url 'contact' %}">Start jou site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call To Action Section End -->
+
+{% endblock %}

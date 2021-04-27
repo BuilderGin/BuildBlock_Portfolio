@@ -1,0 +1,52 @@
+{% load static %}
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="header__logo">
+                    <a href="{% url 'homepage' %}"><img src="{% static 'img/logo1.png' %}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="header__nav__option">
+                    <nav class="header__nav__menu mobile-menu">
+                        <ul>
+                            <li     {% if '/' == request.path %} 
+                                        class="active"
+                                    {% else  %}
+                                        class=""
+                                    {% endif %}><a href="{% url 'homepage' %}">Home</a></li>
+                            <li     {% if 'about' in request.path %} 
+                                        class="active"
+                                    {% else  %}
+                                        class=""
+                                    {% endif %}><a href="{% url 'aboutpage' %}">About</a></li>
+                            <li     {% if 'portfolio' in request.path %} 
+                                        class="active"
+                                    {% else  %}
+                                        class=""
+                                    {% endif %}><a href="{% url 'portfoliopage' %}">Portfolio</a></li>
+                            <li     {% if 'services' in request.path %} 
+                                        class="active"
+                                    {% else  %}
+                                        class=""
+                                    {% endif %}><a href="{% url 'servicespage' %}">Services</a></li>
+                            <li     {% if 'contact' in request.path %} 
+                                        class="active"
+                                    {% else  %}
+                                        class=""
+                                    {% endif %}><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header__nav__social">
+                        <a href="https://wa.me/31640828138?text=Ik%20wil%20graag%20een%20bel%20verzoek%20inplannen%20over%20een%20van%20jou%20services"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/gingge.li.7"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/gingge-li-49369a147/"><i class="social_linkedin"></i></a>
+                        <a href="https://github.com/BuilderGin"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+</header>

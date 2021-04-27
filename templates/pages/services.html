@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} | Services {% endblock %}
+
+{% block content %}
+
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option spad set-bg" data-setbg="{% static 'img/breadcrumb-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Our Sevices</h2>
+                        <div class="breadcrumb__links">
+                            <a href="{% url 'homepage' %}">Home</a>
+                            <span>Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Services Section Begin -->
+    <section class="services-page spad">
+        <div class="container">
+            <div class="row">
+                {% if services %}
+                    {% for service in services %}
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="services__item">
+                            <div class="services__item__icon">
+                                <img src="{{ service.icon.url }}" alt="">
+                            </div>
+                            <h4>{{ service.title }}</h4>
+                            <p>{{ service.description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Call To Action Section Begin -->
+    <section class="callto sp__callto">
+        <div class="container">
+            <div class="callto__services spad set-bg" data-setbg="{% static 'img/calltos-bg1.jpg' %}">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <div class="callto__text">
+                            <h2>START NU MET JE IDEEËN IN JOUW PERSOONLIJKE PROFESSIONELE WEBSITE</h2>
+                            <p>Wijzigingen, aanpassingen, hosten, logo, en meer allemaal mogelijk vanuit een contactpersoon.</p>
+                            <a href="{% url 'contact' %}">Start jou site nu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call To Action Section End -->
+
+    <!-- Logo Begin -->
+    <div class="logo spad">
+        <div class="container">
+            <div class="logo__carousel owl-carousel">
+                {% if logos %}
+                    {% for logo in logos %}
+                        <a href="https://{{ logo.website_link }}" class="logo__item"><img src="{{ logo.company_logo.url }}" alt="{{ logo.company_logo }}"></a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <!-- Logo End -->
+
+
+{% endblock %}
