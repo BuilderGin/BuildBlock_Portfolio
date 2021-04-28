@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '%g0fz8yedo*3)l4yz@(yu%@497!da+)q_vlr$w#l4d)i@-b=-b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'portfolio-buildblock.herokuapp.com', 'buildblock.nl']
 
@@ -85,16 +85,16 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if DEBUG == True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'Portfolio-Site',
-            'USER': 'postgres',
-            'PASSWORD': 'Password',
-            'HOST': 'localhost',
-        }
-    }
+# if DEBUG == True:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'Portfolio-Site',
+#             'USER': 'postgres',
+#             'PASSWORD': 'Password',
+#             'HOST': 'localhost',
+#         }
+#     }
 
 
 DATABASES = {
