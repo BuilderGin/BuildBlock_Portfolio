@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '%g0fz8yedo*3)l4yz@(yu%@497!da+)q_vlr$w#l4d)i@-b=-b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'portfolio-buildblock.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'portfolio-buildblock.herokuapp.com', 'buildblock.nl']
 
 
 # Application definition
@@ -99,9 +99,9 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "your_database_name",
-        "USER": "foo",
-        "PASSWORD": "bar",
+        "NAME": "d9a06qorrsmh6n",
+        "USER": "myeauhwboitnxo",
+        "PASSWORD": "2c841b125f917585ab70e1fbf823d63d744ed09fca6ab9ea05a9cab98dcf7c94",
         "HOST": "localhost",
         "PORT": "5432",
     }
