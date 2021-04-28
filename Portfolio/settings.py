@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
 
     # 3e party
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
