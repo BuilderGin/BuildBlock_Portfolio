@@ -85,27 +85,28 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'Portfolio-Site',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Password',
-#         'HOST': 'localhost',
-#     }
-# }
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "d9a06qorrsmh6n",
-        "USER": "myeauhwboitnxo",
-        "PASSWORD": "2c841b125f917585ab70e1fbf823d63d744ed09fca6ab9ea05a9cab98dcf7c94",
-        "HOST": "localhost",
-        "PORT": "5432",
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'Portfolio-Site',
+            'USER': 'postgres',
+            'PASSWORD': 'Password',
+            'HOST': 'localhost',
+        }
     }
-}
+
+if DEBUG == False:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": "d9a06qorrsmh6n",
+            "USER": "myeauhwboitnxo",
+            "PASSWORD": "2c841b125f917585ab70e1fbf823d63d744ed09fca6ab9ea05a9cab98dcf7c94",
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
+    }
 
 
 db_from_env = dj_database_url.config(conn_max_age=600)
